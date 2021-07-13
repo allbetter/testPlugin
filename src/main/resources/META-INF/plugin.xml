@@ -1,0 +1,40 @@
+<idea-plugin>
+    <id>org.example.testPlugin</id>
+    <name>testHello</name>
+    <vendor email="abc@yourcompany.com" url="http://www.abc.com">abc</vendor>
+
+    <description>test hello test hellotest hellotest hellotest hellotest hellotest hellotest hellotest hellotest hellotest hellotest hellotest hello</description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="demo.hello.world" class="org.example.action.HelloWorldAction" text="SayHelloWorld"
+                description="desc say hello world">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <group id="Example.Apitest.Helper.PopupMenu" text="ExamplePoP" popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </group>
+        <action id="ApiInit" class="org.example.action.InItAction" text="sayInitApi">
+            <add-to-group group-id="Example.Apitest.Helper.PopupMenu" anchor="first"/>
+        </action>
+<!--        <action id="Run KunTest4" class="org.example.action.KunTestAction4" text="Run KunTest4"-->
+<!--                description="run kun test xml">-->
+<!--            <add-to-group group-id="ProjectViewPopupMenu" anchor="before"-->
+<!--                          relative-to-action="ProjectViewPopupMenuRunGroup"/>-->
+<!--        </action>-->
+        <action id="Run KunTest4" class="org.example.action.KunTestAction4" text="Run KunTest4"
+                description="run kun test xml">
+            <add-to-group group-id="ProjectViewPopupMenuRunGroup" anchor="first"
+                          />
+        </action>
+    </actions>
+</idea-plugin>
